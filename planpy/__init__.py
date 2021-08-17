@@ -2,7 +2,11 @@ import pandas as pd
 
 
 
+class risk:
 
+    """Main class to add project risks
+
+    """
 
 class task:
     """Main task class of library.
