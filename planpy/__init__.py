@@ -7,6 +7,10 @@ class risk:
     """Main class to add project risks
 
     """
+    def __init__(self,name,project):
+        self.name = project_name
+        self.project = project
+
 
 class task:
     """Main task class of library.
@@ -63,11 +67,14 @@ class project:
         pass
 
     def remove_task():
+
         pass
 
 
     def show_timeline():
+
         pass
 
     def send_reminders():
+
         pass
