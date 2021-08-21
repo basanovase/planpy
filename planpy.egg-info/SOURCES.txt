@@ -5,4 +5,5 @@ planpy.egg-info/PKG-INFO
 planpy.egg-info/SOURCES.txt
 planpy.egg-info/dependency_links.txt
 planpy.egg-info/entry_points.txt
+planpy.egg-info/requires.txt
 planpy.egg-info/top_level.txt

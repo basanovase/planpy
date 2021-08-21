@@ -1,7 +1,6 @@
 
 import weakref
-
-
+from dateutil import parser
 
 
 class tools:
@@ -14,17 +13,47 @@ class tools:
     """
 
     def add_start_date(self, start_date):
-        self.start_date = start_date
-        return start_date
+
+        """
+
+        Format: '2019-12-04'
+
+        """
+        try:
+            start_date = parser.parse(start_date)
+            self.start_date = start_date
+
+        except Exception as E:
+
+            print(str(E))
+
+        return self.start_date
 
 
     def add_end_date(self, end_date):
-        self.end_date = end_date
-        return self.end_date
+        try:
+            end_date = parser.parse(end_date)
+            self.end_date = add_end_date
+            return self.end_date
+
+        except Exception as E:
+
+            print(str(E))
+
+
+
 
     def add_budget(self, budget):
-        self.subject = subject
-        return self.subject
+        try:
+            
+            int(budget) = budget
+            self.budget = budget
+            return self.add_budget
+
+        except:
+            print(str(E))
+
+
 
     def assigned_to(self, assigned):
         self.assigned = assigned

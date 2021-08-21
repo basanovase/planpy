@@ -32,6 +32,7 @@ class tools:
 
     def add_end_date(self, end_date):
         try:
+
             end_date = parser.parse(end_date)
             self.end_date = add_end_date
             return self.end_date
@@ -45,7 +46,7 @@ class tools:
 
     def add_budget(self, budget):
         try:
-            
+
             int(budget) = budget
             self.budget = budget
             return self.add_budget
