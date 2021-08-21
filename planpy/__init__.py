@@ -31,23 +31,27 @@ class tools:
 
 
     def add_end_date(self, end_date):
-        try:
+        if len(self.start_date) > 0:
 
-            end_date = parser.parse(end_date)
-            self.end_date = add_end_date
-            return self.end_date
+            try:
 
-        except Exception as E:
+                end_date = parser.parse(end_date)
+                self.end_date = add_end_date
+                return self.end_date
 
-            print(str(E))
+            except Exception as E:
 
+                print(str(E))
 
+        else:
+
+            raise ValueError('You must add a start date prior to an end date.')
 
 
     def add_budget(self, budget):
         try:
 
-            int(budget) = budget
+            budget = int(budget)
             self.budget = budget
             return self.add_budget
 
@@ -69,10 +73,13 @@ class risk(tools):
     """ Main risk class of library.
 
     """
+    risks = []
+
     def __init__(self, name, project, progress):
         self.name = name
         self.project = project
         self.progress = progress
+        self.__class__.risks.append(self)
 
 
 
@@ -83,10 +90,13 @@ class task(tools):
                 Methods can then be added off task
 
     """
+    tasks = []
+
     def __init__(self, name, project, progress):
         self.name = name
         self.project = project
         self.progress = progress
+        self.__class__.tasks.append(self)
 
 
 
