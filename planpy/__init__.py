@@ -70,6 +70,8 @@ class project:
 
         pass
 
+    def add_risk():
+        passs
 
     def show_timeline():
 
