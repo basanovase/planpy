@@ -1,6 +1,6 @@
-# planpy
+planpy
 
-An open source library for project management
+An open source library for project management. The intention for this project is pandas integration for report and visualisations in a GANT type format, alongside native reporting
 
 
 Usage:

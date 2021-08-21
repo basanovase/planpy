@@ -1,35 +1,24 @@
-import pandas as pd
+
+import weakref
 
 
 
-class risk:
 
-    """Main class to add project risks
+class tools:
+
 
     """
-    def __init__(self,name,project):
-        self.name = project_name
-        self.project = project
 
-
-class task:
-    """Main task class of library.
-
-            Inititlise a new project:
-                Methods can then be added off task
+    Main function class
 
     """
-    def __init__(self, name, project):
-        self.name = name
-        self.project = project
-
 
     def add_start_date(self, start_date):
         self.start_date = start_date
         return start_date
 
 
-    def add_end_date(self, end_date)
+    def add_end_date(self, end_date):
         self.end_date = end_date
         return self.end_date
 
@@ -45,7 +34,23 @@ class task:
         self.business_owner = business_owner
         return self.business_owner
 
-class project:
+
+
+class task(tools):
+    """Main task class of library.
+
+            Inititlise a new project:
+                Methods can then be added off task
+
+    """
+    def __init__(self, name, project, progress):
+        self.name = name
+        self.project = project
+        self.progress = progress
+
+
+
+class project(tools):
 
     """
     Main project class of library.
@@ -54,36 +59,8 @@ class project:
             Methods can then be added off the project and visualised.
 
     """
+    projects = []
 
-    def __init__(self,project_name, start_date, end_date, budget, project_manager):
+    def __init__(self,project_name):
         self.project_name = project_name
-
-
-
-
-
-    def add_budget():
-        pass
-
-    def add_project_manager():
-        pass
-
-
-    def add_task():
-
-        pass
-
-    def remove_task():
-
-        pass
-
-    def add_risk():
-        pass
-
-    def show_timeline():
-
-        pass
-
-    def send_reminders():
-
-        pass
+        self.__class__.projects.append(weakref.proxy(self))
