@@ -35,6 +35,16 @@ class tools:
         return self.business_owner
 
 
+class risk(tools):
+    """ Main risk class of library.
+
+    """
+    def __init__(self, name, project, progress):
+        self.name = name
+        self.project = project
+        self.progress = progress
+
+
 
 class task(tools):
     """Main task class of library.
@@ -64,3 +74,7 @@ class project(tools):
     def __init__(self,project_name):
         self.project_name = project_name
         self.__class__.projects.append(weakref.proxy(self))
+
+    def __str__(self):
+        for instance in self.projects:
+            return instance.name

@@ -5,7 +5,7 @@ import planpy
 new_project = planpy.project("rest")
 
 
-new_project.add_start_date('30/11/2021')
+new_project.add_start_date('2019-12-04')
 
 
 print(new_project.start_date)
