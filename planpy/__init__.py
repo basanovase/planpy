@@ -23,20 +23,21 @@ class tools:
             start_date = parser.parse(start_date)
             self.start_date = start_date
 
+            return self.start_date
         except Exception as E:
 
             print(str(E))
 
-        return self.start_date
+
 
 
     def add_end_date(self, end_date):
-        if len(self.start_date) > 0:
+        if self.start_date:
 
             try:
 
                 end_date = parser.parse(end_date)
-                self.end_date = add_end_date
+                self.end_date = end_date
                 return self.end_date
 
             except Exception as E:
@@ -113,8 +114,15 @@ class project(tools):
 
     def __init__(self,project_name):
         self.project_name = project_name
-        self.__class__.projects.append(weakref.proxy(self))
+        self.__class__.projects.append(self)
 
     def __str__(self):
         for instance in self.projects:
             return instance.name
+
+
+
+class reporting:
+
+    def __init__(self, project)
+    self.project = project
