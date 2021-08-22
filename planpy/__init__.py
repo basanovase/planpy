@@ -1,5 +1,5 @@
 
-import weakref
+
 from dateutil import parser
 
 
@@ -124,5 +124,22 @@ class project(tools):
 
 class reporting:
 
-    def __init__(self, project)
-    self.project = project
+    def __init__(self, project):
+        self.project = project
+
+
+
+    def month_summary():
+        pass
+
+    def key_risks():
+        pass
+
+    def key_person_dependencies():
+        pass
+
+    def overdue_tasks():
+        pass
+
+    def overdue_risks():
+        pass
