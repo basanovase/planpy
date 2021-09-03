@@ -3,7 +3,7 @@
 from dateutil import parser
 
 
-class tools:
+class Tools:
 
 
     """
@@ -70,7 +70,7 @@ class tools:
         return self.business_owner
 
 
-class risk(tools):
+class Risk(Tools):
     """ Main risk class of library.
 
     """
@@ -84,7 +84,7 @@ class risk(tools):
 
 
 
-class task(tools):
+class Task(Tools):
     """Main task class of library.
 
             Inititlise a new project:
@@ -101,7 +101,7 @@ class task(tools):
 
 
 
-class project(tools):
+class Project(Tools):
 
     """
     Main project class of library.
@@ -122,7 +122,7 @@ class project(tools):
 
 
 
-class reporting:
+class Reporting:
 
     def __init__(self, project):
         self.project = project
