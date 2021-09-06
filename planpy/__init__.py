@@ -1,7 +1,7 @@
 
 
 from dateutil import parser
-
+from os import chdir
 
 class Tools:
 
@@ -71,7 +71,8 @@ class Tools:
 
 
 class Risk(Tools):
-    """ Main risk class of library.
+    """
+    Main risk class of library.
 
     """
     risks = []
@@ -116,9 +117,15 @@ class Project(Tools):
         self.project_name = project_name
         self.__class__.projects.append(self)
 
+
     def __str__(self):
         for instance in self.projects:
             return instance.name
+
+    def start(self, os_dir):
+        os.chdir(os_dir)
+
+
 
 
 
@@ -126,6 +133,7 @@ class Reporting:
 
     def __init__(self, project):
         self.project = project
+        
 
 
 
