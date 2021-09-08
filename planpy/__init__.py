@@ -20,9 +20,9 @@ class Tools:
 
         """
         try:
+
             start_date = parser.parse(start_date)
             self.start_date = start_date
-
             return self.start_date
         except Exception as E:
 
@@ -49,15 +49,6 @@ class Tools:
             raise ValueError('You must add a start date prior to an end date.')
 
 
-    def add_budget(self, budget):
-        try:
-
-            budget = int(budget)
-            self.budget = budget
-            return self.add_budget
-
-        except:
-            print(str(E))
 
 
 
@@ -127,13 +118,31 @@ class Project(Tools):
 
 
 
+class Budget:
+
+    def __init__(self, project, total)
+        self.project = project
+        self.total = total
 
 
+    def add_expense():
+        pass
+
+    def add_gst():
+        pass
+
+    def quarterly_projection():
+        pass
+
+    def cost_category():
+        pass
+
+        
 class Reporting:
 
     def __init__(self, project):
         self.project = project
-        
+
 
 
 
