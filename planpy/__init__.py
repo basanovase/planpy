@@ -68,16 +68,17 @@ class Risk(Tools):
     """
     risks = []
 
-    def __init__(self, name, project, progress):
+    def __init__(self, name: str, project: str, progress: float):
         self.name = name
         self.project = project
         self.progress = progress
         self.__class__.risks.append(self)
 
 
-
 class Task(Tools):
-    """Main task class of library.
+    """
+
+    Main task class of library.
 
             Inititlise a new project:
                 Methods can then be added off task
@@ -85,11 +86,12 @@ class Task(Tools):
     """
     tasks = []
 
-    def __init__(self, name, project, progress):
+    def __init__(self, name, project, progress, fte):
         self.name = name
         self.project = project
         self.progress = progress
         self.__class__.tasks.append(self)
+        self.fte = fte
 
 
 
@@ -120,7 +122,7 @@ class Project(Tools):
 
 class Budget:
 
-    def __init__(self, project, total)
+    def __init__(self, project, total):
         self.project = project
         self.total = total
 
@@ -134,16 +136,17 @@ class Budget:
     def quarterly_projection():
         pass
 
+    def monthly_projection():
+        pass
+
     def cost_category():
         pass
 
-        
+
 class Reporting:
 
     def __init__(self, project):
         self.project = project
-
-
 
 
     def month_summary():
