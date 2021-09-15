@@ -2,6 +2,10 @@
 
 from dateutil import parser
 from os import chdir
+from structures import construction, it
+
+
+
 
 class Tools:
 
@@ -75,6 +79,7 @@ class Risk(Tools):
         self.__class__.risks.append(self)
 
 
+
 class Task(Tools):
     """
 
@@ -106,17 +111,30 @@ class Project(Tools):
     """
     projects = []
 
-    def __init__(self,project_name):
+    def __init__(self,project_name, project_type="it"):
         self.project_name = project_name
         self.__class__.projects.append(self)
+
 
 
     def __str__(self):
         for instance in self.projects:
             return instance.name
 
-    def start(self, os_dir):
-        os.chdir(os_dir)
+
+    def create_directory(self, os_dir):
+            os.chdir(os_dir)
+            os.mkdir(project_name)
+            if project_type == "construction":
+
+                for folder in construction.construction:
+                    os.mkdir(folder)
+            else:
+
+                for folder in it.it:
+                    os.mkdir(folder)
+
+
 
 
 
