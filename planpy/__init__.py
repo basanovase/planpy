@@ -178,7 +178,3 @@ class Reporting:
 
     def overdue_risks():
         pass
-
-
-project = Project('testing')
-project.create_directory("/Users/flynnmclean/Documents/Projects")
