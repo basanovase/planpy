@@ -1,21 +1,18 @@
 
 
 from dateutil import parser
-from os import chdir
+import os
 from structures import construction, it
 
 
 
 
 class Tools:
-
-
     """
 
     Main function class
 
     """
-
     def add_start_date(self, start_date):
 
         """
@@ -90,7 +87,6 @@ class Task(Tools):
 
     """
     tasks = []
-
     def __init__(self, name, project, progress, fte):
         self.name = name
         self.project = project
@@ -114,7 +110,7 @@ class Project(Tools):
     def __init__(self,project_name, project_type="it"):
         self.project_name = project_name
         self.__class__.projects.append(self)
-
+        self.project_type = project_type
 
 
     def __str__(self):
@@ -124,8 +120,9 @@ class Project(Tools):
 
     def create_directory(self, os_dir):
             os.chdir(os_dir)
-            os.mkdir(project_name)
-            if project_type == "construction":
+            os.mkdir(self.project_name)
+            os.chdir(os_dir+"/"+self.project_name)
+            if self.project_type == "construction":
 
                 for folder in construction.construction:
                     os.mkdir(folder)
