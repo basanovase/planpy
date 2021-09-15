@@ -121,7 +121,7 @@ class Project(Tools):
     def create_directory(self, os_dir):
             os.chdir(os_dir)
             os.mkdir(self.project_name)
-            os.chdir(os.join(os_dir+self.project_name))
+            os.chdir(os_dir+"/"+self.project_name)
             if self.project_type == "construction":
 
                 for folder in construction.construction:
