@@ -8,4 +8,10 @@ An open source library for project management. The intention for this project is
 
 import planpy
 
-new_project = planpy.project("My new project")
+new_project = planpy.project("My new project",project_type="it")
+
+
+<h2>provision a template folder directory at location</h2>
+new_project.create_directory(dir)
+
+
