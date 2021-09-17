@@ -16,4 +16,6 @@ it = [
 'Substantial Completion',
 'Maintenance & Operating Manuals',
 'Guarantees - Warrantees',
-'As-Built Documents']
+'As-Built Documents',
+'Reporting',
+'Budget']

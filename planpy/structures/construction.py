@@ -23,4 +23,6 @@ construction = ['Owner Authorization',
 'Certificate of Occupancy',
 'Maintenance & Operating Manuals',
 'Guarantees - Warrantees',
-'As-Built Documents']
+'As-Built Documents',
+'Reporting',
+'Budget']
