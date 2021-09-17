@@ -136,6 +136,11 @@ class Project(Tools):
 
 
 class Budget:
+    """
+    
+    Main budget class
+    
+    """
 
     def __init__(self, project, total):
         self.project = project
@@ -159,6 +164,9 @@ class Budget:
 
 
 class Reporting:
+    """
+     Main reporting class
+    """
 
     def __init__(self, project):
         self.project = project
