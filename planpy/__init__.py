@@ -7,6 +7,16 @@ from structures import construction, it
 
 
 
+class Resource:
+    """
+    Main resource class
+    """
+    def __init__(self, name, hourly_rate):
+        self.name = project_name
+        self.hourly_rate = hourly_rate
+
+
+
 class Tools:
     """
 
@@ -25,7 +35,7 @@ class Tools:
             start_date = parser.parse(start_date)
             self.start_date = start_date
             return self.start_date
-        
+
         except Exception as E:
 
             print(str(E))
@@ -34,7 +44,7 @@ class Tools:
 
 
     def add_end_date(self, end_date):
-        
+
         if self.start_date:
 
             try:
@@ -56,12 +66,12 @@ class Tools:
 
 
     def assigned_to(self, assigned):
-        
+
         self.assigned = assigned
         return self.assigned
 
     def business_owner(self, business_owner):
-        
+
         self.business_owner = business_owner
         return self.business_owner
 
@@ -141,9 +151,9 @@ class Project(Tools):
 
 class Budget:
     """
-    
+
     Main budget class
-    
+
     """
 
     def __init__(self, project, total):
@@ -190,4 +200,3 @@ class Reporting:
 
     def overdue_risks():
         pass
-
