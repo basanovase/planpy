@@ -108,6 +108,10 @@ class Task(Tools):
         self.__class__.tasks.append(self)
         self.fte = fte
 
+    def progress(self, percentage_complete):
+        self.progress = percentage_complete
+        return self.progress
+
 
 
 class Project(Tools):
