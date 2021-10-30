@@ -7,14 +7,6 @@ from structures import construction, it
 
 
 
-class Resource:
-    """
-    Main resource class
-    """
-    def __init__(self, name, hourly_rate):
-        self.name = project_name
-        self.hourly_rate = hourly_rate
-
 
 
 class Tools:
@@ -74,6 +66,16 @@ class Tools:
 
         self.business_owner = business_owner
         return self.business_owner
+
+
+class Resource(Tools):
+    """
+    Main resource class
+    """
+    def __init__(self, name, hourly_rate):
+        self.name = name
+        self.hourly_rate = hourly_rate
+
 
 
 class Risk(Tools):
