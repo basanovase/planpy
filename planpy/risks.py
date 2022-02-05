@@ -1,12 +1,13 @@
+from tools import Tool
 
-class Risk(Tools):
+class Risk(Tool):
     """
     Main risk class of library.
 
     """
     risks = []
 
-    def __init__(self, name: str, project: str, progress: float):
+    def __init__(self, name, project, progress):
         self.name = name
         self.project = project
         self.progress = progress

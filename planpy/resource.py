@@ -1,4 +1,7 @@
-class Resource(Tools):
+from tools import Tool
+
+
+class Resource(Tool):
     """
     Main resource class
     """

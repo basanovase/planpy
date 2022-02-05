@@ -8,7 +8,7 @@ from resource import Resource
 from risks import Risk
 #https://mermaid-js.github.io/mermaid/#/gantt
 from budget import Budget
-from reports import Report
+from reports import Reporting
 from tools import Tool
 
 
