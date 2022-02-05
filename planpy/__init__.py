@@ -9,6 +9,7 @@ from structures import construction, it
 #https://mermaid-js.github.io/mermaid/#/gantt
 
 class Tools:
+
     """
 
     Main function class
@@ -53,9 +54,6 @@ class Tools:
             raise ValueError('You must add a start date prior to an end date.')
 
 
-
-
-
     def assigned_to(self, assigned):
 
         self.assigned = assigned
@@ -92,7 +90,23 @@ class Risk(Tools):
 
 
 
-class Task(Tools):
+class Task:
+
+    """
+
+    Main task class
+
+
+    """
+        def __init__(self, name, project, progress, fte):
+            self.name = name
+            self.project = project
+            self.progress = progress
+            self.__class__.tasks.append(self)
+            self.fte = fte
+            self.activetasks = []
+
+class TaskRegister(Tools):
     """
 
     Main task class of library.
@@ -102,17 +116,20 @@ class Task(Tools):
 
     """
     tasks = []
-    def __init__(self, name, project, progress, fte):
-        self.name = name
-        self.project = project
-        self.progress = progress
-        self.__class__.tasks.append(self)
-        self.fte = fte
+
+    def __init__(self):
+
+        self.activetasks = []
 
     def progress(self, percentage_complete):
+
         self.progress = percentage_complete
+        
         return self.progress
 
+    def add_task(self, task_name):
+
+        self.activetasks.append(task_name)
 
 
 class Project(Tools):
@@ -127,28 +144,42 @@ class Project(Tools):
     projects = []
 
     def __init__(self,project_name, project_type="it"):
+
         self.project_name = project_name
         self.__class__.projects.append(self)
         self.project_type = project_type
+        self.task_register = TaskRegister(project_name + ': task register')
 
 
     def __str__(self):
+
         for instance in self.projects:
             return instance.name
 
 
     def create_directory(self, os_dir):
+
             os.chdir(os_dir)
             os.mkdir(self.project_name)
             os.chdir(os_dir+"/"+self.project_name)
+
             if self.project_type == "construction":
 
                 for folder in construction.construction:
+
                     os.mkdir(folder)
             else:
 
                 for folder in it.it:
+
                     os.mkdir(folder)
+
+
+    def add_task(task_name):
+
+        self.task_regiser
+
+
 
 
 
