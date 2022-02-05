@@ -4,33 +4,10 @@ from dateutil import parser
 import os
 from structures import construction, it
 from tasks import TaskRegister
-
-
+from resource import Resource
+from risks import Risk
 #https://mermaid-js.github.io/mermaid/#/gantt
 
-
-class Resource(Tools):
-    """
-    Main resource class
-    """
-    def __init__(self, name, hourly_rate):
-        self.name = name
-        self.hourly_rate = hourly_rate
-
-
-
-class Risk(Tools):
-    """
-    Main risk class of library.
-
-    """
-    risks = []
-
-    def __init__(self, name: str, project: str, progress: float):
-        self.name = name
-        self.project = project
-        self.progress = progress
-        self.__class__.risks.append(self)
 
 
 
