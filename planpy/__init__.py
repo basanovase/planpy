@@ -2,19 +2,19 @@
 
 from dateutil import parser
 import os
-from structures import construction, it
+#from structures import construction, it
 from tasks import TaskRegister
 from resource import Resource
 from risks import Risk
 #https://mermaid-js.github.io/mermaid/#/gantt
 from budget import Budget
 from reports import Report
+from tools import Tool
 
 
 
 
-
-class Project(Tools):
+class Project(Tool):
 
     """
     Main project class of library.

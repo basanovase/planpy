@@ -10,7 +10,7 @@ class Task:
 
 
     """
-        def __init__(self, name, project, progress, fte):
+    def __init__(self, name, project, progress, fte):
             self.name = name
             self.project = project
             self.progress = progress
@@ -23,7 +23,7 @@ class Task:
 
 
 
-class TaskRegister(Tools):
+class TaskRegister(Tool):
     """
 
     Main task class of library.

@@ -3,7 +3,7 @@
 
 
 
-class Tools:
+class Tool:
 
     """
 
