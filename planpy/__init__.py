@@ -3,66 +3,10 @@
 from dateutil import parser
 import os
 from structures import construction, it
-
+from tasks import TaskRegister
 
 
 #https://mermaid-js.github.io/mermaid/#/gantt
-
-class Tools:
-
-    """
-
-    Main function class
-
-    """
-    def add_start_date(self, start_date):
-
-        """
-
-        Format: '2019-12-04'
-
-        """
-        try:
-
-            start_date = parser.parse(start_date)
-            self.start_date = start_date
-            return self.start_date
-
-        except Exception as E:
-
-            print(str(E))
-
-
-
-
-    def add_end_date(self, end_date):
-
-        if self.start_date:
-
-            try:
-
-                end_date = parser.parse(end_date)
-                self.end_date = end_date
-                return self.end_date
-
-            except Exception as E:
-
-                print(str(E))
-
-        else:
-
-            raise ValueError('You must add a start date prior to an end date.')
-
-
-    def assigned_to(self, assigned):
-
-        self.assigned = assigned
-        return self.assigned
-
-    def business_owner(self, business_owner):
-
-        self.business_owner = business_owner
-        return self.business_owner
 
 
 class Resource(Tools):
@@ -90,46 +34,7 @@ class Risk(Tools):
 
 
 
-class Task:
 
-    """
-
-    Main task class
-
-
-    """
-        def __init__(self, name, project, progress, fte):
-            self.name = name
-            self.project = project
-            self.progress = progress
-            self.__class__.tasks.append(self)
-            self.fte = fte
-            self.activetasks = []
-
-class TaskRegister(Tools):
-    """
-
-    Main task class of library.
-
-            Inititlise a new project:
-                Methods can then be added off task
-
-    """
-    tasks = []
-
-    def __init__(self):
-
-        self.activetasks = []
-
-    def progress(self, percentage_complete):
-
-        self.progress = percentage_complete
-        
-        return self.progress
-
-    def add_task(self, task_name):
-
-        self.activetasks.append(task_name)
 
 
 class Project(Tools):
