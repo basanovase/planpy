@@ -7,8 +7,8 @@ from tasks import TaskRegister
 from resource import Resource
 from risks import Risk
 #https://mermaid-js.github.io/mermaid/#/gantt
-
-
+from budget import Budget
+from reports import Report
 
 
 
@@ -60,61 +60,3 @@ class Project(Tools):
     def add_task(task_name):
 
         self.task_regiser
-
-
-
-
-
-
-
-class Budget:
-    """
-
-    Main budget class
-
-    """
-
-    def __init__(self, project, total):
-        self.project = project
-        self.total = total
-
-
-    def add_expense():
-        pass
-
-    def add_gst():
-        pass
-
-    def quarterly_projection():
-        pass
-
-    def monthly_projection():
-        pass
-
-    def cost_category():
-        pass
-
-
-class Reporting:
-    """
-     Main reporting class
-    """
-
-    def __init__(self, project):
-        self.project = project
-
-
-    def month_summary():
-        pass
-
-    def key_risks():
-        pass
-
-    def key_person_dependencies():
-        pass
-
-    def overdue_tasks():
-        pass
-
-    def overdue_risks():
-        pass
