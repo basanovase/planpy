@@ -11,10 +11,10 @@ class Task:
 
     """
     def __init__(self, name, project, progress, fte):
+
             self.name = name
             self.project = project
             self.progress = progress
-            self.__class__.tasks.append(self)
             self.fte = fte
             self.activetasks = []
 
@@ -44,6 +44,6 @@ class TaskRegister(Tool):
 
         return self.progress
 
-    def add_task(self, task_name):
+    def add_task(self, Task):
 
-        self.activetasks.append(task_name)
+        self.activetasks.append(Task)

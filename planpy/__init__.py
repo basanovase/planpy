@@ -3,14 +3,14 @@
 from dateutil import parser
 import os
 #from structures import construction, it
-from tasks import TaskRegister
+from tasks import TaskRegister, Task
 from resource import Resource
 from risks import Risk
 #https://mermaid-js.github.io/mermaid/#/gantt
 from budget import Budget
 from reports import Reporting
 from tools import Tool
-
+import asyncio
 
 
 
@@ -30,7 +30,7 @@ class Project(Tool):
         self.project_name = project_name
         self.__class__.projects.append(self)
         self.project_type = project_type
-        self.task_register = TaskRegister(project_name + ': task register')
+        self.task_register = TaskRegister()
 
 
     def __str__(self):
@@ -57,6 +57,18 @@ class Project(Tool):
                     os.mkdir(folder)
 
 
-    def add_task(task_name):
+    def add_task(self, task_name):
 
-        self.task_regiser
+        self.task_register.add_task(task_name)
+
+
+
+if __name__ == "__main__":
+
+    test = Project('test')
+
+    task = Task("test", test, 0, 0)
+
+    test.add_task(task)
+
+    print(test.task_register.activetasks)
